@@ -21,10 +21,10 @@ ON IDE :
                                                                                                                                                                           
  ON GRID (from Python persepctive): 
  -can be installed from python with : 
-  pip install selenium==3.14.1 
-  pip install pytest-selenium
-  pip install pytest-variables
+      pip install selenium==3.14.1 
+      pip install pytest-selenium
+      pip install pytest-variables
  -"Gridlastic" accounts are free to create
 -NOTE: The python selenium client does not work with selenium version 3.3. Also, starting from selenium version 3.9.1 you must also include "platformName": "windows" in the request when testing with firefox and IE.
 -Able to run tests in parallel (save time) w/ command : 
-  py.test -n 2 --rerun 2 test_unittest.py
+      py.test -n 2 --rerun 2 test_unittest.py
