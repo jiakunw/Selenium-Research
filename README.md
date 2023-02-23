@@ -42,3 +42,5 @@ The pytest-selenium plugin works very well with selenium tests and in the below 
 
 UPDATES:
 -Currently leaning towards GRID for testing, will try this next week.
+-Get started on IDE, do test cases going, can record a test and move over to Grid? 
+- first: Try IDE , then get a test running on a non-local machine
