@@ -1,0 +1,1 @@
+TRANSACTION_CREDS=[("spaddle", "asdF"), ("madeline", "asdF"), ("seth-bakery", "asdF")]

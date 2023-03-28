@@ -1,3 +1,1 @@
-USER_CREDENTIALS=[]
-
-# add registered ("username", "password")
+USER_CREDENTIALS=[("spaddle", "asdF"), ("madeline", "asdF"), ("seth-bakery", "asdF")]
