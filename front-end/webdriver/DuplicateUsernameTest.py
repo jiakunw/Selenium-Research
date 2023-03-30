@@ -16,16 +16,25 @@ driver.get("https://boltplace.com")
 
 sleep(1)
 
-create_account_button = driver.find_element(By.PARTIAL_LINK_TEXT, "New to ZUZ?")
+try:
+    create_account_button = driver.find_element(By.PARTIAL_LINK_TEXT, "New to ZUZ?")
+except:
+    print("Could not find create account button")
+    driver.close()
+    quit()
+
 create_account_button.click()
 sleep(2)
 
+try:
+    username_field = driver.find_element(By.ID, "username")
+except:
+    print("Could not find username field")
+    driver.close()
+    quit()
 
-username_field = driver.find_element(By.ID, "username")
 username_field.send_keys(username)
 sleep(2)
-
-#TODO: Assert that not valid username text appears
 
 try:
     t = driver.find_element(By.XPATH, '//*[contains(text(), "Usernames must be unique, contain a mix of letters, numbers, or dashes, and be at least 4 characters long.")]')

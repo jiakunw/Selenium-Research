@@ -28,19 +28,24 @@ https://selenium-python.readthedocs.io/getting-started.html
 
 # PaymentTest.py
 The test takes in 3 arguments login_username, password, and payee_username
--login_username is the username that will be used to login into the ZUZ website
+-login_username is the username that will be used to login
 -password is the password associated with the login_username account
--payee_username is the username of the account that you want to test sending money to
+-payee_username is the username of the account that you want to send the payment to
+
+This will test sending a payment from one user to another
 
 # DuplicateUserTest.py 
 This test takes in 1 argument username
 -username is the username that will be verified is already being used by another account
 
+This will verify that a taken username can not be used for a new account
 
 # LoginTest.py
 This test takes in 2 arguments username and password
 -username is the username that will be used to login
 -password is the password associated with the username account
+
+This will test logging into a user account
 
 # NewUserTest.py
 This test takes in 6 arguments
@@ -50,4 +55,5 @@ This test takes in 6 arguments
 -firstName
 -lastName
 -phoneNumber
-The test will create an account using the 6 arguments
+
+This will test creating a new account with the given 6 inputs
