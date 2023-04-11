@@ -1,0 +1,1 @@
+USER_CREDENTIALS=[("spaddle", "asdF"), ("madeline", "asdF"), ("seth-bakery", "asdF")]
