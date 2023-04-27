@@ -1,27 +1,37 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
-import sys
+import argparse
 
-length = len(sys.argv)
-
-if(length < 2):
-    print("Please give all required arguments")
+def terminate(str):
+    if(str != None):
+        print(str)
+    driver.close()
+    sleep(1)
     quit()
-else:
-    username = sys.argv[1]
+
+parser = argparse.ArgumentParser(description='Duplicate Username Test')
+
+parser.add_argument('-u', '--username', default=None, help='Username that you to be tested if it is a duplicate')
+parser.add_argument('-w', '--website', default='https://boltplace.com', help='URL of Website')
+
+args = parser.parse_args()
     
+if(args.username == None):
+    print("No username given")
+    quit()
+
+username = args.username
+
 driver = webdriver.Chrome()
-driver.get("https://boltplace.com")
+driver.get(args.website)
 
 sleep(1)
 
 try:
     create_account_button = driver.find_element(By.PARTIAL_LINK_TEXT, "New to ZUZ?")
 except:
-    print("Could not find create account button")
-    driver.close()
-    quit()
+    terminate("Could not find create account button")
 
 create_account_button.click()
 sleep(2)
@@ -29,9 +39,7 @@ sleep(2)
 try:
     username_field = driver.find_element(By.ID, "username")
 except:
-    print("Could not find username field")
-    driver.close()
-    quit()
+    terminate('Could not find username field')
 
 username_field.send_keys(username)
 sleep(2)
@@ -42,4 +50,5 @@ try:
 except:
     print("Fail! Text did not appear")                    
 
-driver.close()
+
+terminate()
